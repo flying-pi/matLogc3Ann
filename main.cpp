@@ -211,16 +211,16 @@ int main(int argc, char *argv[]) {
     int countFormuls;
     cout << "enter count of formuls ";
     int count;
-//    cin >> count;
-    count = 3;
+    cin >> count;
+//    count = 3;
     char (*userInputFormuls)[10] = new char[count][10];
-//    for (int i = 0; i < count; i++) {
-//        std::cout << "Type logical formular" << std::endl;
-//        cin >> userInputFormuls[i];
-//    }
-    strcpy(userInputFormuls[0], "!A&(B|!C)");
-    strcpy(userInputFormuls[1], "!A&(B|!C)");
-    strcpy(userInputFormuls[2], "!A&(B|!C)");
+    for (int i = 0; i < count; i++) {
+        std::cout << "Type logical formular" << std::endl;
+        cin >> userInputFormuls[i];
+    }
+//    strcpy(userInputFormuls[0], "!A&(B|!C)");
+//    strcpy(userInputFormuls[1], "!A&(B|!C)");
+//    strcpy(userInputFormuls[2], "!A&(B|!C)");
 
     cout << endl;
 
@@ -244,6 +244,7 @@ int main(int argc, char *argv[]) {
             }
         }
     }
+
     int combinationCount = fractal(count);
     int **index = new int *[combinationCount];
     for (int i = 0; i < combinationCount; i++)
